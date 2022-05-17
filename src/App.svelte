@@ -28,7 +28,6 @@
         }}
       />
     </main>
-    <p>The current page is: {$location}</p>
     <Footer />
   </div>
 </div>

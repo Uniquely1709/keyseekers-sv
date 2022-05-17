@@ -9,7 +9,7 @@
   <div class="row mx-0">
     <div class="col-md-4 col-6 text-start">
       <span class="mx-4 d-xl-none" />
-      <span>&copy; Denda {year}</span>
+      <a href="https://www.d3nda.de">&copy; Denda {year}</a>
     </div>
     <div class="col-4 d-none d-md-block">
       <span class="d-inline-flex">
@@ -46,5 +46,10 @@
   .bs {
     width: 1.5rem;
     height: 1.5rem;
+  }
+  a,
+  a:hover {
+    text-decoration: none;
+    color: white;
   }
 </style>

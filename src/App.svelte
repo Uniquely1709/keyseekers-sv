@@ -41,7 +41,7 @@
     color: #fff;
   }
   .img {
-    background-image: url("/ressources/bg.jpg");
+    background-image: url("https://images.unsplash.com/uploads/1411160110892ab555b6f/80b0d25e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=kaleb-nimz--5rA4DRrEXU-unsplash.jpg");
     background-size: cover;
   }
   .cover-container {

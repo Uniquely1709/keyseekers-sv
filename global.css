@@ -4,3 +4,15 @@ body {
   width: 100%;
   height: 100%;
 }
+
+:root {
+  --asphalt: #1a080d;
+  --dark-tan: #6a0a1a;
+  --cab-sav: #450813;
+  --shiraz: #ad0421;
+  --aubergine: #2f0911;
+  --cosmic: #723665;
+  --finn: #532750;
+  --tamarind: #311524;
+  --livid-brown: #542c32;
+}

@@ -1,17 +1,17 @@
 <script>
   import Email from "./contacts/Email.svelte";
   import Insta from "./contacts/Insta.svelte";
-  import Spacer from "./helper/Spacer.svelte";
   const year = new Date().getFullYear();
 </script>
 
-<footer class="mt-auto">
+<footer class="mt-auto w-100">
   <div class="row mx-0">
-    <div class="col-md-4 col-6 text-start">
-      <span class="mx-4 d-xl-none" />
+    <div
+      class="col-md-4 col-6 text-start d-flex justify-content-center d-md-block"
+    >
       <a href="https://www.d3nda.de">&copy; Denda {year}</a>
     </div>
-    <div class="col-4 d-none d-md-block">
+    <div class="col-4 d-none d-md-flex justify-content-center">
       <span class="d-inline-flex">
         <span>Made with &nbsp;</span>
         <a class="bs" href="https://getbootstrap.com/">
@@ -31,22 +31,16 @@
         </a>
       </span>
     </div>
-    <div class=" col-md-4 col-6 text-end">
-      <Email />
+    <div
+      class=" col-md-4 col-6 text-end d-flex justify-content-center d-md-block"
+    >
+      <Email className="me-3" />
       <Insta />
-      <span class="mx-4 d-xl-none" />
     </div>
   </div>
 </footer>
 
 <style>
-  path {
-    fill: white;
-  }
-  .bs {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
   a,
   a:hover {
     text-decoration: none;

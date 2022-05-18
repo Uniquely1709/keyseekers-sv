@@ -1,4 +1,8 @@
-<span class="bs me-3">
+<script>
+  export let className;
+</script>
+
+<span class="bs {className}">
   <a href="mailto:info@thekeyseekers.de">
     <svg class="bs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <path

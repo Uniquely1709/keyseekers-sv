@@ -1,6 +1,18 @@
 <script>
   import Email from "./contacts/Email.svelte";
   import Insta from "./contacts/Insta.svelte";
+
+  function handleMailToForm() {
+    /**@type {HTMLInputElement}*/
+    const subjectInput = document.getElementById("inputSubject");
+    /**@type {HTMLInputElement}*/
+    const bodyInput = document.getElementById("inputBody");
+    /**@type {HTMLFormElement}*/
+    const form = document.getElementById("mailToForm");
+    // trigger the systems `mailto:` handler
+    window.top.location = `mailto:mail@example.com?subject=${subjectInput.value}&body=${bodyInput.value}`;
+    setTimeout(() => form.reset(), 1000);
+  }
 </script>
 
 <div class="container">
@@ -21,10 +33,8 @@
       <Insta />
       <div class="mb-4" />
       <form
-        action="mailto:mail@example.com"
-        method="get"
-        target="_newtab"
-        enctype="application/x-url-form-encoded"
+        id="mailToForm"
+        on:submit|preventDefault={handleMailToForm}
         class="d-flex flex-grow flex-column justify-content-center align-items-center"
       >
         <div class="form-group text-start">
@@ -38,11 +48,11 @@
           />
         </div>
         <div class="form-group text-start mt-2">
-          <label for="inputMessage">Nachricht</label>
+          <label for="inputBody">Nachricht</label>
           <textarea
             class="form-control w"
             rows="3"
-            id="inputMessage"
+            id="inputBody"
             placeholder="Deine Nachricht an uns..."
             name="body"
           />

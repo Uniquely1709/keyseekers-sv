@@ -1,6 +1,6 @@
 <script>
   import Spacer from "./helper/Spacer.svelte";
-  import { location, link } from "svelte-spa-router";
+  import { link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
 </script>
 
@@ -10,7 +10,7 @@
       <Spacer />
       <!-- svelte-ignore a11y-missing-attribute -->
       <a use:link={{ href: "/" }} use:active>
-        <h1 class="float-md-start mb-0 ">The Key Seekers</h1>
+        <h1 class="float-md-start mb-0 ">TheKeySeekers</h1>
       </a>
     </div>
     <div class="d-none d-md-block d-flex">
@@ -43,12 +43,52 @@
           /></svg
         >
       </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        style="z-index: /* over */ 9001 /* und ja, scheinbar kann man in das style attribute einfach kommentare reinballern, weil du musst deine super developer freundlichen inline styles natürlich auch ordentlich dokumentieren */
+        /* Man kann das sogar
+        Multiline machen! Aber viel wichtiger, das mit dem z-index
+        ist kinda hacky. Bootstrap hat solche Nav-Dinger doch out 
+        of the box, zumindest hatten die das früher ¯\_(ツ)_/¯ */ "
+      >
+        Launch demo modal
+      </button>
+      <div
+        class="modal fade black"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-body black">
+              <!-- svelte-ignore a11y-missing-attribute -->
+              <a use:link={{ href: "/" }} class="nav-link black ">Home</a>
+              <!-- svelte-ignore a11y-missing-attribute -->
+              <a use:link={{ href: "/projects" }} class="nav-link">Projekte</a>
+              <!-- svelte-ignore a11y-missing-attribute -->
+              <a use:link={{ href: "/about" }} class="nav-link">Über Uns</a>
+              <!-- svelte-ignore a11y-missing-attribute -->
+              <a use:link={{ href: "/contact" }} class="nav-link">Kontakt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Spacer />
     </div>
   </div>
 </header>
 
 <style>
+  .black {
+    color: black;
+  }
   a {
     text-decoration: none;
   }

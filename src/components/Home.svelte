@@ -1,6 +1,27 @@
+<script>
+  import { fade } from "svelte/transition";
+
+  const carouselPhotos = [
+    "/ressources/folder/1ae0907b9daf1a3d95d73f20e12f7538ef1c-image-preview-1920.jpg",
+    "/ressources/folder/9de2bce2db23a44c081a3ebdc84501f52b9d-image-preview-1920.jpg",
+    "/ressources/folder/dc172895b89fc3ae8ed0c379b2aa69b66af2-image-preview-1920.jpg",
+    "/ressources/folder/f520f8b7122b58e2da5e297083902e06eb2d-image-preview-1920.jpg",
+  ];
+
+  let index = 0;
+
+  const next = () => {
+    index = (index + 1) % carouselPhotos.length;
+  };
+</script>
+
 <div>
   <div class="home-wrapper py-5">
     <h1>Hallo und herzlich willkommen auf unserer Website!</h1>
+    {#each [carouselPhotos[index]] as src (index)}
+      <img transition:fade {src} alt="" />
+    {/each}
+    <button on:click={next}>Next!</button>
     <p>
       Wir sind TheKeySeekers, eine kleine Band die einfach Spaß am gemeinsamen
       Musik machen hat.
@@ -16,17 +37,8 @@
 </div>
 
 <style>
-  .piano-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1599912664816-e1726bdee8f3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470");
-    height: 500px;
-    width: 100%;
-  }
-
-  .mic-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1594943482366-dc15b83816b1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1894");
-    height: 500px;
-    width: 100%;
-  }
+  /* img,
+    button {
+      position: absolute;
+    } */
 </style>
